@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+    --color-base-whith: #ffffff;
+    --color-base-black: #070100;
+    --color-gray-light: #eeeeee;
+    --color-base-blue: #523ead;
+    --color-base-dark: #09090b;
+}
+body, button, input{
+    font-family: "Roboto", sans-serif;
+}
+
+.hide{
+    display: none;
+    
+}
+
+section{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: var(--color-base-whith);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    gap: 1rem;  
+}
+
+h1{
+    font-size: 4rem;
+    color: var(--color-base-black);
+}
+
+.social{
+    display: inline-flex;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.social a{
+    display: block;
+    border: 1px solid var(--color-gray-light);
+    color: var(--color-base-black);
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    text-decoration: none;
+}
+
+span{
+    font-size: 1.4rem;
+    color: var(--color-base-black);
+}
+
+input{
+    width: 100%;
+    height: 4rem;
+    border: none;
+    background-color: var(--color-gray-light);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+input[type=submit]{
+    width: 17rem;
+    margin: 1rem;
+    background-color: var(--color-base-blue);
+    color: var(--color-base-whith);
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 3rem;
+    background-color: var(--color-base-blue);
+    color: var(--color-base-whith);    
+    
+}
+
+.up{
+    border-radius: 10rem 10rem 0 0;
+    --delay: .0s;
+    animation: show-up-mobi .5s var(--delay) backwards;
+    z-index: 3;
+   
+}
+.in{
+   border-radius: 0 0 10rem 10rem; 
+    --delay: .0s;
+    animation: show-in-mobi .5s var(--delay) backwards;
+    z-index: 2; 
+   
+}
+#containar-sign-in form{
+    --delay: .0s;
+    animation: show-in-mobi .5s var(--delay) backwards;
+    z-index: 1; 
+}
+#containar-sign-up form{
+    --delay: .0s;
+    animation: show-up-mobi .5s var(--delay) backwards;
+    z-index: 0;
+}   
+
+h2{
+    font-size: 3rem;
+}
+p{
+    font-size: 1.4rem;
+}
+button{
+    width: 17rem;
+    padding: 1rem;
+    border: 1px solid var(--color-base-whith);
+    border-radius: 1rem;
+    background-color: var(--color-base-blue);
+    color: var(--color-base-whith);
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
+input[type=submit]:hover, button:hover{
+    filter: brightness(1.22);
+}
+input[type=submit]:active, button:active{
+    transform: scale(0.97);
+}
+@keyframes show-up-mobi {
+    100% {
+        transform: translateY(0%);
+      }
+      0% {
+        transform: translateY(-100%);
+      }
+}
+@keyframes show-in-mobi {
+    100% {
+        transform: translateY(0%);
+      }
+      0% {
+        transform: translateY(100%);
+      }
+}
+
+@media (min-width: 700px){
+    #app{
+        background: linear-gradient(287.56deg, #c3e9fb 0%, #c4d9fa 100%);
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+ 
+    section{
+        width: min(85rem, 90%);
+        height: min(65rem, 80%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100%;
+        border-radius: 3rem;
+        box-shadow: 0 .8rem .5rem rgba(0, 0, 0, 0.1);
+       
+    }
+    .up{
+        border-radius: 10rem 3rem 3rem 10rem;  
+        --delay: .0s;
+        animation: show-up .5s var(--delay) backwards;
+        z-index: 3;
+    }
+    .in{
+        border-radius: 3rem 10rem 10rem 3rem; 
+        --delay: .0s;
+        animation: show-in .5s var(--delay) backwards;
+        z-index: 2; 
+    }
+    #containar-sign-in form{
+        --delay: .0s;
+        animation: show-in .5s var(--delay) backwards;
+        z-index: 1; 
+    }
+    #containar-sign-up form{
+        --delay: .0s;
+        animation: show-up .5s var(--delay) backwards;
+        z-index: 0;
+    }
+    
+    @keyframes show-up {
+        100% {
+            transform: translateX(0%);
+          }
+          0% {
+            transform: translateX(-100%);
+          }
+    }
+    @keyframes show-in {
+        100% {
+            transform: translateX(0%);
+          }
+          0% {
+            transform: translateX(100%);
+          }
+    }
+}
